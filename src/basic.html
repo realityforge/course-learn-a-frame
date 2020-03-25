@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title>L04 - Basic primitives and HTML attributes</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
+
+<body>
+<a-scene>
+    <!-- Colors: #D7D7D9, #736439, #400D01, #733F34, #A6918D -->
+
+
+    <!-- a 16:9 ratio box -->
+    <a-box color="#736439"
+           width="8"
+           height="4.5"
+           depth="0.2"
+           position="0 0 -15">
+        <!--
+            position is relative to box.
+            So when we move it forward in z axis it is 1cm in front of containing box. (0.10 would make it exactly
+            the same distance and would probably cause rendering artifacts
+         -->
+        <a-circle color="#A6918D" position="2 0 0.11" side="double"></a-circle>
+    </a-box>
+
+    <!-- absolute position is a little more complex to work out than the above relative positioned -->
+    <a-circle color="#D7D7D9" position="-2 0 -14.89" side="double"></a-circle>
+
+    <!-- segments-radial is number of polys form the circle arc -->
+    <!-- side=double implies you see both faces of polygon rather than just "outside" -->
+
+    <a-cylinder color="#733F34"
+                height="2"
+                radius="2"
+                segments-radial="24"
+                open-ended="true"
+                side="double">
+    </a-cylinder>
+
+</a-scene>
+</body>
+</html>
