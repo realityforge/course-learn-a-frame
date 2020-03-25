@@ -11,4 +11,4 @@ Firstly you need to setup port forwarding in chrome devtools. See the
 and [Get Started with Remote Debugging Android Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)
 articles. This will allow accessing your dev server as `localhost:port` from your Quest that is not subject to
 the HTTPS restriction. Also look into [remote debugging](https://developer.oculus.com/documentation/oculus-browser/browser-remote-debugging/)
-to use chrome devtools across a wireless connection. 
+to use chrome devtools across a wireless connection.
