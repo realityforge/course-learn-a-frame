@@ -4,16 +4,11 @@ This contains the projects used for the course [Learn A-Frame And Get Ready For 
 
 The vendor directory contains course materials provided by the teacher.
 
-## Setting up SSL for local development
+## Development on the Quest
 
-The WebXR api requires pages are served over ssl. Installing locally assuming a host named `slartibartfast.local`
-
-    > brew install mkcert
-    > mkdir -p certs
-    > cd certs
-    > mkcert localhost slartibartfast.local 127.0.0.1 ::1 # Generate the certs
-    > mkcert -install # Install the certs into the system
-
-And then run the server via:
-
-    > npx http-server --ssl --cert certs/localhost+3.pem --key certs/localhost+3-key.pem -a slartibartfast.local
+Firstly you need to setup port forwarding in chrome devtools. See the
+[Access Local Servers](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server)
+and [Get Started with Remote Debugging Android Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)
+articles. This will allow accessing your dev server as `localhost:port` from your Quest that is not subject to
+the HTTPS restriction. Also look into [remote debugging](https://developer.oculus.com/documentation/oculus-browser/browser-remote-debugging/)
+to use chrome devtools across a wireless connection. 
