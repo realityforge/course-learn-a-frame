@@ -12,3 +12,5 @@ and [Get Started with Remote Debugging Android Devices](https://developers.googl
 articles. This will allow accessing your dev server as `localhost:port` from your Quest that is not subject to
 the HTTPS restriction. Also look into [remote debugging](https://developer.oculus.com/documentation/oculus-browser/browser-remote-debugging/)
 to use chrome devtools across a wireless connection.
+
+Then we can just run `cd src && npx http-server` to start a server useable by the quest.
