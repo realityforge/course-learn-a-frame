@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<title>Look-At component</title>
+	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+	<!-- ******** NEW LOOK-AT COMPONENT VERSION FOR A-FRAME v1.0.4 ******** -->
+	<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+</head>
+
+<body>
+    <!-- ******** With A-Frame v1.0.4 you don't need to install the animation component anymore as it is part of the core library ******** -->
+    <!-- ******** For the other external components used in the lecture, you can read details on their new version in the <head> element) ******** -->
+	<a-scene>
+		<!-- Asset Management System -->
+		<a-assets>
+			<img id="look-at-img" src="L33-ASSETs/L33-IMGs.jpg">
+		</a-assets>
+		
+		<!-- Floor -->
+		<a-plane color="#E7E7E7" shader="flat" rotation="-90 0 0" scale="6 18 1">
+		</a-plane>
+		
+		<!-- Camera Rig -->
+		<a-entity position="-4.5 0 0" rotation="0 -36 0">
+			<!-- Camera -->
+			<a-camera id="cam">
+				<a-cursor></a-cursor>
+			</a-camera>
+		</a-entity>
+		
+		<!-- Blue Box -->
+		<a-box id="blue" color="#00AAFF" position="-1.5 0.5 -6"
+			   animation="property: position;
+						  to: -1.5 0.5 6;
+						  dir: alternate;
+						  easing: linear;
+						  loop: true;
+						  dur: 6000">
+			<!-- Image -->
+			<a-image src="#look-at-img" position="0 1.5 0" height="0.75" look-at="#cam">
+			</a-image>
+		</a-box>
+
+		<!-- Yellow Box -->
+		<a-box color="#FFAA00" position="1.5 0.5 -6" look-at="#blue">
+			<!-- Text -->
+			<a-entity position="0 1.5 0" look-at="#cam"
+					  text="value: LOOK-AT; color: #212121; align: center; wrapCount: 9"
+					  geometry="primitive: plane; width: auto; height: 0.5"
+					  material="color: #FFAA00; shader: flat; visible: true">
+			</a-entity>
+		</a-box>
+	</a-scene>
+</body>
+</html>

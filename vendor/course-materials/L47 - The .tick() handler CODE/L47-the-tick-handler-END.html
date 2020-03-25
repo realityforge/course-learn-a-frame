@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<title>The .tick() handler</title>
+	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+	<script src="L47-JS/L47-javascript-START.js"></script>
+</head>
+
+<body>
+	<a-scene background="color: #FFFFFF">
+		
+		<!-- Camera Rig -->
+		<a-entity id="cam-rig" position="0 0 4">
+			<!--Camera -->
+			<a-camera>
+				<a-cursor></a-cursor>
+			</a-camera>
+		</a-entity>
+
+		<!-- Ground -->
+		<a-plane color="#DDDDDD" shader="flat" rotation="-90 0 0" scale="8 16 1">
+		</a-plane>
+
+		<!-- Blue -->
+		<a-box id="blue" color="#00AAFF" position="-2 3 -4"
+			   change-animated-colorize-property="newOnClick: #00AAFF">
+		</a-box>
+		<!-- Yellow -->
+		<a-box id="yellow" color="#FFAA00" position="-2 0.5 -4"
+			   change-animated-colorize-property="newOnClick: #FFAA00">
+		</a-box>
+
+		<!-- Green -->
+		<a-box id="green" color="#00AA00" position="2 3 -4"
+			   match-animated-colorize>
+		</a-box>
+		<!-- Red -->
+		<a-box id="red" position="2 0.5 -4"
+			   animated-colorize="initialColor: #AA0000; onClick: #FF0000">
+		</a-box>
+	</a-scene>
+</body>
+</html>

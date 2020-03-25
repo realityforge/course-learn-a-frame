@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<title>Multiple entities component PART 1</title>
+	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+	<script src="L51-JS/L51-javascript-START.js"></script>
+</head>
+
+<body>
+	<a-scene>
+		<!-- Camera Rig -->
+		<a-entity position="0 0 8">
+			<!-- Camera -->
+			<a-camera>
+				<a-cursor></a-cursor>
+			</a-camera>
+		</a-entity>
+		
+		<!-- Empty Entity -->
+		<a-entity>
+		</a-entity>
+		
+		<!-- Ground -->
+		<a-circle color="#DDDDDD" shader="flat" radius="2" rotation="-90 0 0">
+		</a-circle>
+
+	</a-scene>
+</body>
+</html>

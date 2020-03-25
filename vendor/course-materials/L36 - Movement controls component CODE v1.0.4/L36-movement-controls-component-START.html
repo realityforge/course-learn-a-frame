@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<title>Movement controls component</title>
+	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+	<a-scene vr-mode-ui="enabled: false">
+		<!-- Camera Rig -->
+		<a-entity position="0 0 6">
+			<!-- Camera -->
+			<a-entity camera position="0 1.6 0"
+					  look-controls="pointerLockEnabled: true"
+					  wasd-controls="acceleration: 50;
+									 easing: 40">
+				<a-cursor></a-cursor>
+				<!-- Cockpit
+				<a-sphere color="#FFAA00" position="0 -1.1 0"></a-sphere> -->
+			</a-entity>
+		</a-entity>
+		
+		<!-- Ground -->
+		<a-plane color="#DDDDDD" shader="flat" rotation="-90 0 0" scale="8 4 1">
+		</a-plane>
+
+		<!-- Cylinder -->
+		<a-cylinder color="#AA0000" radius="0.5" position="1.5 0.5 0" keypress>
+		</a-cylinder>
+
+		<!-- Box -->
+		<a-box color="#00AA00" width="0.5" depth="3" position="-1.5 0.5 0">
+		</a-box>
+	</a-scene>
+</body>
+</html>

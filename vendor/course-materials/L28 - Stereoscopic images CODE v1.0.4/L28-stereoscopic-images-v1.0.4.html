@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title>L28 - Stereoscopic images</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="L28-JS/aframe-stereo-component.min.js"></script>
+</head>
+	
+<body>
+    <!-- ******** NOTHING HAS CHANGED WITH v1.0.4 ******** -->
+    <a-scene>
+        <!-- Asset Management System -->
+        <a-assets>
+        	<img id="left" src="L28-ASSETs/left-img.jpg">
+        	<img id="right" src="L28-ASSETs/right-img.jpg">
+        </a-assets>
+        
+        <!-- Sky
+        <a-sky></a-sky> -->
+        
+        <!-- Camera -->
+        <a-camera stereocam="eye: right"></a-camera>
+        
+        <!-- Stereoscopic Image
+        <a-image src="#left" position="0 1.5 -1" height="0.75" stereo="eye: left">
+        </a-image>
+        <a-image src="#right" position="0 1.5 -1" height="0.75" stereo="eye: right">
+        </a-image> -->
+        
+        <!-- Stereoscopic 360° Image -->
+        <a-sky src="#left" rotation="0 -90 0" stereo="eye: left"></a-sky>
+        <a-sky src="#right" rotation="0 -90 0" stereo="eye: right"></a-sky>
+    </a-scene>
+</body>
+</html>

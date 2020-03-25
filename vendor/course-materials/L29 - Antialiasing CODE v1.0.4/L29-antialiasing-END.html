@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>L29 - Antialiasing</title>
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+</head>
+	
+<body>
+    <a-scene antialias="true">
+		<!-- Image -->
+		<a-image src="L29-ASSETs/aa.jpg" position="0 1.5 -8" height="0.75" scale="6 6 1">
+			<a-animation attribute="rotation" from="0 15 0" to="0 -15 0" repeat="indefinite"
+						 direction="alternate" dur="3000" easing="linear">
+			</a-animation>
+		</a-image>
+		
+		<!-- Sphere -->
+		<a-sphere color="#AA0000" radius="0.75" position="0 0.5 -5"></a-sphere>
+    </a-scene>
+</body>
+</html>

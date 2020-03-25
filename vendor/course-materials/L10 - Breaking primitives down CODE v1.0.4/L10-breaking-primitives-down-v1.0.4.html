@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>L10 - Breaking primitives down</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ******** NOTHING HAS CHANGED WITH v1.0.4 ******** -->
+        <a-scene>
+            <!-- Asset Management System -->
+            <a-assets>
+                <img id="L10-img-BG" src="L10-IMGs/L10-img-background.jpg">
+            </a-assets>
+            
+            <!-- Background Image -->
+            <a-image src="#L10-img-BG" position="0 1.6 -11" scale="12 9 1"></a-image>
+            
+            <!-- PRIMITIVES -->
+            <!-- Under the hood, they are ENTITIES with a semantic name -->
+            <!-- that have a preset bundle of COMPONENTS with default values -->
+            <a-box color="#AA0000" height="1.5" position="-1 0.5 -4"></a-box>
+            
+            <!-- ENTITIES -->
+            <!-- They have no appearance, behaviour, or functionality -->
+            <!-- until you attach COMPONENTS to them -->
+            <!-- ENTITY: box -->
+            <a-entity geometry="primitive: box;
+                                height: 1.5"
+                      material="shader: standard;
+                                color: #AA0000"
+                      position="1 0.5 -4">
+            </a-entity>
+            
+            <!-- Modified ENTITY: curved image -->
+            <a-entity geometry="primitive: cylinder;
+                                theta-length: 90;
+                                theta-start: 135;
+                                radius: 0.707;
+                                height: 0.833;
+                                open-ended: true"
+                      material="shader: flat;
+                                color: #FFFFFF;
+                                side: double;
+                                src: #L10-img-BG"
+                      position="0 1.5 0"
+                      scale="-10 10 10">
+            </a-entity>
+        </a-scene>
+    </body>
+</html> 

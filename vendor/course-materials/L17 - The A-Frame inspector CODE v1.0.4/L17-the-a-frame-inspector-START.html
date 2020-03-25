@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>L17 - The A-Frame Inspector</title>
+    <!-- Press "CTRL + ALT + i" to open the visual inspector -->
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <!-- Asset Management System -->
+        <!-- Download and move your 3D models to the ASSETs folder -->
+        <a-assets>
+            <img id="floor" src="L17-ASSETs/floor-1024.jpg">
+			<!-- https://sketchfab.com/models/e512a5adb1904a71a1bd53c4a21b48d4 -->
+            <a-asset-item id="tl" src="L17-ASSETs/traffic-light.gltf"></a-asset-item>
+			<!-- https://sketchfab.com/models/fdc8b5ba548243448f9b918ea7892786 -->
+            <a-asset-item id="ssl" src="L17-ASSETs/suburban-street-lamp.gltf"></a-asset-item>
+            <!-- To troubleshoot issues related to renaming 3D objects check Lecture 14 -->
+        </a-assets>
+
+        <!-- Custom Light | Ambient -->
+        <a-entity light="type: ambient; intensity: 0.2">
+        </a-entity>
+
+        <!-- Custom Light | Directional -->
+        <a-entity light="type: directional; intensity: 0.2" position="-0.5 1 1">
+        </a-entity>
+
+        <!-- Sky -->
+        <a-sky color="#212121"></a-sky>
+
+        <!-- Ground -->
+        <a-plane src="#floor" rotation="-90 0 0" scale="20 20 1" repeat="2 2">
+        </a-plane>
+
+        <!-- Camera -->
+        <a-entity position="0 0 9">
+            <a-camera></a-camera>
+        </a-entity>
+
+        <!-- Your 3D Model 01 | Traffic Light -->
+        <a-entity gltf-model="#tl" position="-3.18 0.25 0" scale="0.18 0.18 0.18">
+        </a-entity>
+
+        <!-- Your 3D Model 02 | Suburban Street Lamp -->
+        <a-entity gltf-model="#ssl" position="4 2.925 0" rotation="0 180 0">
+        </a-entity>
+
+    </a-scene>
+</body>
+</html>

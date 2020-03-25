@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>L29 - Antialiasing</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+	
+<body>
+    <!-- ******** SOME THINGS HAVE CHANGED WITH v1.0.4 ******** -->
+    <!-- The antialias is now a property of the renderer component (line 20) -->
+    <!-- The <a-animation> system was dismissed with the v0.9.0 release,
+         and since then A-Frame started including the "animation" component
+         in its core default components, so there is no more need to install
+         any script to use it (line 23).
+         You can learn more about the "animation" component in Section 7
+         Lecture 31 "Animation component. Moreover, since some of the properties
+         come with different names, you can find all their names and values
+         on the official A-Frame documentation at this link:
+         https://aframe.io/docs/1.0.0/components/animation.html -->
+    <a-scene renderer="antialias: true">
+		<!-- Image -->
+		<a-image src="L29-ASSETs/aa.jpg" position="0 1.5 -8" height="0.75" scale="6 6 1"
+                 animation="property: rotation; from: 0 15 0; to: 0 -15 0; loop: true;
+                            dir: alternate; dur: 3000; easing: linear">
+		</a-image>
+        
+		<!-- Sphere -->
+		<a-sphere color="#AA0000" radius="0.75" position="0 0.5 -5"></a-sphere>
+    </a-scene>
+</body>
+</html>
