@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>Textures and materials</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <!-- Asset Management System -->
+    <a-assets>
+        <img id="metal" src="img/TexturesCom_Metal_Corrugated_1K_albedo.jpg">
+        <img id="metal-normal" src="img/TexturesCom_Metal_Corrugated_1K_normal.jpg">
+        <img id="brick" src="img/TexturesCom_Brick_Medieval_1K_albedo.jpg">
+        <img id="brick-normal" src="img/TexturesCom_Brick_Medieval_1K_normal.jpg">
+    </a-assets>
+
+    <a-box width="4"
+           height="4"
+           depth="4"
+           repeat="1 1"
+           src="#metal"
+           normal-map="#metal-normal"
+           normal-texture-repeat="1 1"
+           normal-scale="1 -1"
+           position="-2 1.5 -9"
+           side="back">
+    </a-box>
+    <a-box color="#795548"
+           material="color: #FFFFFF;
+                     src: #brick;
+                     repeat: 2 2;
+                     normal-map: #brick-normal;
+                     normal-texture-repeat: 2 2;
+                     normal-scale: 1 -1;
+                     roughness: 0.9"
+           width="4"
+           height="4"
+           depth="4"
+           position="2 1.5 -9"
+           side="back">
+    </a-box>
+
+    <!-- shader: standard means low rougness makes it glossy -->
+    <a-sphere material="color: #0000AA;
+                        roughness: 0.2;
+                        shader: standard"
+              radius="0.5"
+              position="-2 1.5 -9">
+    </a-sphere>
+    <!-- shader flat means never reflects light so it not glossy or rough -->
+    <a-sphere material="color: #AA0000;
+                        roughness: 0.2;
+                        shader: flat;
+                        opacity: 0.3"
+              radius="0.5"
+              position="2 1.5 -9">
+    </a-sphere>
+</a-scene>
+</body>
+</html>

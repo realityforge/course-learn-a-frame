@@ -1,6 +1,7 @@
 # DO NOT EDIT: File is auto-generated
 * -text
 *.html text
+*.jpg binary
 *.md text
 .gitattributes text
 .gitignore text

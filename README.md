@@ -14,3 +14,8 @@ the HTTPS restriction. Also look into [remote debugging](https://developer.oculu
 to use chrome devtools across a wireless connection.
 
 Then we can just run `cd src && npx http-server` to start a server useable by the quest.
+
+## Textures Acquired
+
+The textures were downloaded from [textures.com](https://www.textures.com/) and then converted using ImageMagick
+commands such as `convert foo.tif foo.jpg`. Another place for interesting textures is [pexels](https://www.pexels.com/).
