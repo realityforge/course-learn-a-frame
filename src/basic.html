@@ -9,23 +9,23 @@
 <a-scene>
     <!-- Colors: #D7D7D9, #736439, #400D01, #733F34, #A6918D -->
 
+    <!-- absolute position is a little more complex to work out than the above relative positioned -->
+    <a-circle color="#D7D7D9" position="-2 0 -15" side="double"></a-circle>
 
-    <!-- a 16:9 ratio box -->
+    <!-- a 2:1 ratio box -->
     <a-box color="#736439"
-           width="8"
-           height="4.5"
+           width="4"
+           height="2"
            depth="0.2"
-           position="0 0 -15">
+           position="0 0 -15"
+           rotation="90 0 0">
         <!--
             position is relative to box.
             So when we move it forward in z axis it is 1cm in front of containing box. (0.10 would make it exactly
             the same distance and would probably cause rendering artifacts
          -->
-        <a-circle color="#A6918D" position="2 0 0.11" side="double"></a-circle>
+        <a-circle color="#A6918D" position="2 0 0" side="double" rotation="90 0 0"></a-circle>
     </a-box>
-
-    <!-- absolute position is a little more complex to work out than the above relative positioned -->
-    <a-circle color="#D7D7D9" position="-2 0 -14.89" side="double"></a-circle>
 
     <!-- segments-radial is number of polys form the circle arc -->
     <!-- side=double implies you see both faces of polygon rather than just "outside" -->
@@ -35,7 +35,9 @@
                 radius="2"
                 segments-radial="24"
                 open-ended="true"
-                side="double">
+                side="double"
+                position="0 0 -2"
+                rotation="90 0 0">
     </a-cylinder>
 
 </a-scene>
