@@ -11,17 +11,29 @@
             <a-assets>
                 <img id="floor" src="img/TexturesCom_Metal_Threadplate2_1K_albedo.jpg">
                 <img id="floor-normal" src="img/TexturesCom_Metal_Threadplate2_1K_normal.jpg">
+                <img id="sky" src="img/clear-sunny-sky.jpg">
             </a-assets>
+
+            <!-- a-sky is just an entity of a sphere of 5000 meters with the texture mapped on the inside -->
+            <a-sky src="#sky"
+                   rotation="0 64 0">
+                <!-- the rotation aligns the position of the sun in the texture with the default light source -->
+            </a-sky>
+
+            <!--
+               to make the plane/floor go to horizon then we just repeat the floor out the spheres radius
+               by altering the scale and the repeats
+            -->
 
             <a-plane material="color: #FFFFFF;
                                roughness: 0.6;
                                src: #floor;
-                               repeat: 5 5;
+                               repeat: 5000 5000;
                                normal-map: #floor-normal;
-                               normal-texture-repeat: 5 5;
+                               normal-texture-repeat: 5000 5000;
 "
                      rotation="-90 0 0"
-                     scale="10 10 0">
+                     scale="10000 10000 0">
 
             </a-plane>
 
