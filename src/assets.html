@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>Asset Loading</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+<!-- To correct the texture color in 3D models, you want to attache the renderer component
+     to the <a-scene> element and then set the colorManagement property to true (line 13).
+     More details about the Linear and sRGB color space issue here:
+     https://github.com/aframevr/aframe/issues/3509 -->
+<a-scene renderer="colorManagement: true">
+    <!-- Asset Management System -->
+    <a-assets>
+        <img id="sky" src="img/clear-sunny-sky.jpg">
+        <!--
+            gltf is jon and contains references to the bin file (for geometry buffer) and textures
+        -->
+        <a-asset-item id="castle_village_scene" src="assets/castle_village_scene/scene.gltf"></a-asset-item>
+
+        <!--
+            obj assets require both obj and mtl to be preloaded versus single gltf file above
+
+            obj == geometry
+            mtl == material  ... which references texture file
+         -->
+        <a-asset-item id="catapult_obj" src="assets/catapult/Catapult.obj"></a-asset-item>
+        <a-asset-item id="catapult_mtl" src="assets/catapult/Catapult.mtl"></a-asset-item>
+    </a-assets>
+
+    <!-- Sky -->
+    <a-sky src="#sky"></a-sky>
+
+    <!-- Camera -->
+    <a-entity position="-3 0 50">
+        <a-camera></a-camera>
+    </a-entity>
+
+    <!-- Castle model -->
+    <a-entity gltf-model="#castle_village_scene"></a-entity>
+
+    <!-- Catapult model -->
+    <a-entity obj-model="obj: #catapult_obj;
+                         mtl: #catapult_mtl;"
+              position="-10 0 50"
+              rotation="0 200 0"
+              scale="0.5 0.5 0.5">
+    </a-entity>
+
+</a-scene>
+</body>
+</html>
