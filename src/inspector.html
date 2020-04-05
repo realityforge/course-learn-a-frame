@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>The A-Frame Inspector</title>
+    <!-- Press "CTRL + ALT + i" to open the visual inspector -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+<a-scene renderer="colorManagement: true">
+    <a-assets>
+        <img id="floor" src="img/floor-1024.jpg">
+        <a-asset-item id="traffic_light" src="assets/traffic_light/scene.gltf"></a-asset-item>
+        <a-asset-item id="suburban_street_lamp" src="assets/suburban_street_lamp/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <!-- weak ambient light -->
+    <a-entity light="type: ambient; intensity: 0.2"></a-entity>
+
+    <!-- weak directional light -->
+    <a-entity light="type: directional; intensity: 0.2" position="-0.5 1 1"></a-entity>
+
+    <a-sky color="#212121"></a-sky>
+
+    <!-- floor -->
+    <a-plane src="#floor" rotation="-90 0 0" scale="20 20 1" repeat="2 2"></a-plane>
+
+    <!-- camera -->
+    <a-entity position="0 0 9">
+        <a-camera></a-camera>
+    </a-entity>
+
+    <a-entity gltf-model="#traffic_light" position="-3.18 0.25 0" scale="0.18 0.18 0.18"></a-entity>
+
+    <!-- Red Light -->
+    <a-entity id="red-light"
+              light="distance: 0.4; intensity: 4; color: #CC0000; type: point"
+              position="-2.213 4.479 0.369">
+    </a-entity>
+
+    <!-- street lamp -->
+    <a-entity gltf-model="#suburban_street_lamp" position="4 2.925 0" rotation="0 180 0"></a-entity>
+
+    <!-- Light Bulb -->
+    <a-entity id="light-bulb"
+              light="decay: 2; intensity: 2; distance: 4; color: #ffcc00; type: point"
+              position="1.385 5.036 0.065">
+    </a-entity>
+
+    <!-- Light Cone -->
+    <a-entity id="light-cone"
+              light="angle: 45; type: spot; color: #ffcc00; penumbra: 0.3"
+              position="1.385 5.486 0.065" rotation="-90 0 0">
+    </a-entity>
+</a-scene>
+</body>
+</html>
