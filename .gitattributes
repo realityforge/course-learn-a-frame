@@ -3,6 +3,7 @@
 *.html text
 *.jpg binary
 *.md text
+*.png binary
 .gitattributes text
 .gitignore text
 .ruby-version text
